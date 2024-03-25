@@ -1,0 +1,14 @@
+<!-- Students/details.html -->
+<h1>{{ student.first_name }} {{ student.last_name }}</h1>
+<ul>
+  {% for course in student.courses.all %}
+    <li>{{ course.course_name }}</li>
+  {% endfor %}
+</ul>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+
